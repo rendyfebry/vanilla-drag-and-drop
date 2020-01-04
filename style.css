@@ -15,6 +15,17 @@ body {
   margin: 0 auto;
 }
 
+.left-wrapper {
+  width: 50%;
+  padding: 10px;
+}
+
+.right-wrapper {
+  width: 50%;
+  background-color: #6db65b;
+  padding: 10px;
+}
+
 .draggable {
   background-color: #4aae9b;
   padding: 10px;
@@ -25,6 +36,5 @@ body {
 }
 
 #dropzone {
-  background-color: #6db65b;
   padding: 10px;
 }

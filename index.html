@@ -16,36 +16,38 @@
       }
 
       function onDrop(event) {
-        const id = event.dataTransfer.getData('text');
+        const id = event.dataTransfer.getData("text");
 
         const draggableElement = document.getElementById(id);
         const dropzone = event.target;
-        
+
         dropzone.appendChild(draggableElement);
 
-        event
-          .dataTransfer
-          .clearData();
+        event.dataTransfer.clearData();
       }
     </script>
   </head>
   <body>
     <div class="parent">
-      <span
-        class="draggable"
-        id="draggableSpan"
-        draggable="true"
-        ondragstart="onDragStart(event);"
-      >
-        draggable
-      </span>
-      <span
+      <div class="left-wrapper">
+        <h1>To-Do</h1>
+        <span
+          class="draggable"
+          id="draggableSpan"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+        >
+          draggable
+        </span>
+      </div>
+      <div
+        class="right-wrapper"
         id="dropzone"
         ondragover="onDragOver(event);"
-        ondrop='onDrop(event);'
+        ondrop="onDrop(event);"
       >
-        dropzone
-      </spanid="dropzone">
+        <h1>Done</h1>
+      </div>
     </div>
   </body>
 </html>
