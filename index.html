@@ -25,16 +25,18 @@
         const draggableElement = document.getElementById(id);
         const dropzone = event.target;
 
-        dropzone.appendChild(draggableElement);
+        if (dropzone.classList.contains("dropable")) {
+          dropzone.appendChild(draggableElement);
 
-        event.dataTransfer.clearData();
+          event.dataTransfer.clearData();
+        }
       }
     </script>
   </head>
   <body>
     <div class="parent">
       <div
-        class="todo_wrapper"
+        class="todo_wrapper dropable"
         ondragover="onDragOver(event);"
         ondrop="onDrop(event);"
       >
@@ -77,14 +79,14 @@
         </div>
       </div>
       <div
-        class="progress_wrapper"
+        class="progress_wrapper dropable"
         ondragover="onDragOver(event);"
         ondrop="onDrop(event);"
       >
         <h1>Progress</h1>
       </div>
       <div
-        class="done_wrapper"
+        class="done_wrapper dropable"
         ondragover="onDragOver(event);"
         ondrop="onDrop(event);"
       >
