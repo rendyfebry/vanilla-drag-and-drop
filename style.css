@@ -5,35 +5,43 @@ body {
 
 .parent {
   border: 2px solid #dfa612;
-  height: 4rem;
+  min-height: 500px;
   display: flex;
   justify-content: space-between;
   color: black;
   margin-bottom: 10px;
-  font-weight: bold;
   max-width: 900px;
   margin: 30px auto;
 }
 
 .todo_wrapper {
-  width: 50%;
+  flex: 1;
+  padding: 15px 10px;
+}
+
+.progress_wrapper {
+  flex: 1;
+  background-color: #00aaff;
   padding: 15px 10px;
 }
 
 .done_wrapper {
-  width: 50%;
+  flex: 1;
   background-color: #6db65b;
   padding: 15px 10px;
 }
 
 .todo_wrapper h1,
+.progress_wrapper h1,
 .done_wrapper h1 {
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
 .draggable {
   background-color: #4aae9b;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 .onMove {

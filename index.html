@@ -11,6 +11,10 @@
         event.currentTarget.classList.add("onMove");
       }
 
+      function onDragEnd(event) {
+        event.currentTarget.classList.remove("onMove");
+      }
+
       function onDragOver(event) {
         event.preventDefault();
       }
@@ -29,16 +33,55 @@
   </head>
   <body>
     <div class="parent">
-      <div class="todo_wrapper">
+      <div
+        class="todo_wrapper"
+        ondragover="onDragOver(event);"
+        ondrop="onDrop(event);"
+      >
         <h1>To-Do</h1>
         <div
           class="draggable"
-          id="draggableSpan"
+          id="item-1"
           draggable="true"
           ondragstart="onDragStart(event);"
+          ondragend="onDragEnd(event);"
         >
-          draggable
+          Item 1
         </div>
+        <div
+          class="draggable"
+          id="item-2"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+          ondragend="onDragEnd(event);"
+        >
+          Item 2
+        </div>
+        <div
+          class="draggable"
+          id="item-3"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+          ondragend="onDragEnd(event);"
+        >
+          Item 3
+        </div>
+        <div
+          class="draggable"
+          id="item-4"
+          draggable="true"
+          ondragstart="onDragStart(event);"
+          ondragend="onDragEnd(event);"
+        >
+          Item 4
+        </div>
+      </div>
+      <div
+        class="progress_wrapper"
+        ondragover="onDragOver(event);"
+        ondrop="onDrop(event);"
+      >
+        <h1>Progress</h1>
       </div>
       <div
         class="done_wrapper"
