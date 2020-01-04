@@ -11,19 +11,24 @@ body {
   color: black;
   margin-bottom: 10px;
   font-weight: bold;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 30px auto;
 }
 
-.left-wrapper {
+.todo_wrapper {
   width: 50%;
-  padding: 10px;
+  padding: 15px 10px;
 }
 
-.right-wrapper {
+.done_wrapper {
   width: 50%;
   background-color: #6db65b;
-  padding: 10px;
+  padding: 15px 10px;
+}
+
+.todo_wrapper h1,
+.done_wrapper h1 {
+  margin-bottom: 10px;
 }
 
 .draggable {
@@ -33,8 +38,4 @@ body {
 
 .onMove {
   background-color: yellow;
-}
-
-#dropzone {
-  padding: 10px;
 }

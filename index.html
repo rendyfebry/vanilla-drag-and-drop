@@ -29,20 +29,19 @@
   </head>
   <body>
     <div class="parent">
-      <div class="left-wrapper">
+      <div class="todo_wrapper">
         <h1>To-Do</h1>
-        <span
+        <div
           class="draggable"
           id="draggableSpan"
           draggable="true"
           ondragstart="onDragStart(event);"
         >
           draggable
-        </span>
+        </div>
       </div>
       <div
-        class="right-wrapper"
-        id="dropzone"
+        class="done_wrapper"
         ondragover="onDragOver(event);"
         ondrop="onDrop(event);"
       >
