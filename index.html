@@ -6,7 +6,21 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script>
-      function onDragStart(event) {
+      function enableDragSort(draggableClass) {
+        const draggableList = document.getElementsByClassName(draggableClass);
+
+        Array.prototype.map.call(draggableList, item => {
+          enableDragItem(item);
+        });
+      }
+
+      function enableDragItem(item) {
+        item.setAttribute("draggable", true);
+        item.ondragstart = onDragStart;
+        item.ondragend = onDragEnd;
+      }
+
+      function onDragStart() {
         event.dataTransfer.setData("text/plain", event.target.id);
         event.currentTarget.classList.add("onMove");
       }
@@ -41,40 +55,16 @@
         ondrop="onDrop(event);"
       >
         <h1>To-Do</h1>
-        <div
-          class="draggable"
-          id="item-1"
-          draggable="true"
-          ondragstart="onDragStart(event);"
-          ondragend="onDragEnd(event);"
-        >
+        <div class="draggable" id="item-1">
           Item 1
         </div>
-        <div
-          class="draggable"
-          id="item-2"
-          draggable="true"
-          ondragstart="onDragStart(event);"
-          ondragend="onDragEnd(event);"
-        >
+        <div class="draggable" id="item-2">
           Item 2
         </div>
-        <div
-          class="draggable"
-          id="item-3"
-          draggable="true"
-          ondragstart="onDragStart(event);"
-          ondragend="onDragEnd(event);"
-        >
+        <div class="draggable" id="item-3">
           Item 3
         </div>
-        <div
-          class="draggable"
-          id="item-4"
-          draggable="true"
-          ondragstart="onDragStart(event);"
-          ondragend="onDragEnd(event);"
-        >
+        <div class="draggable" id="item-4">
           Item 4
         </div>
       </div>
@@ -93,5 +83,11 @@
         <h1>Done</h1>
       </div>
     </div>
+
+    <script>
+      (() => {
+        enableDragSort("draggable");
+      })();
+    </script>
   </body>
 </html>
