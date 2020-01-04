@@ -11,11 +11,17 @@ body {
   color: black;
   margin-bottom: 10px;
   font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#draggableSpan {
+.draggable {
   background-color: #4aae9b;
   padding: 10px;
+}
+
+.onMove {
+  background-color: yellow;
 }
 
 #dropzone {
