@@ -6,6 +6,37 @@ function enableDragSort(draggableClass) {
   });
 }
 
+// function enableDragItem(item) {
+//   item.setAttribute("draggable", true);
+//   item.ondrag = handleDrag;
+//   item.ondragend = handleDrop;
+// }
+
+// function handleDrag(item) {
+//   const selectedItem = item.target;
+//   const list = selectedItem.parentNode;
+//   const x = event.clientX;
+//   const y = event.clientY;
+
+//   console.log(list);
+
+//   selectedItem.classList.add("drag-sort-active");
+//   let swapItem =
+//     document.elementFromPoint(x, y) === null
+//       ? selectedItem
+//       : document.elementFromPoint(x, y);
+
+//   if (list === swapItem.parentNode) {
+//     swapItem =
+//       swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
+//     list.insertBefore(selectedItem, swapItem);
+//   }
+// }
+
+// function handleDrop(item) {
+//   item.target.classList.remove("drag-sort-active");
+// }
+
 function enableDragItem(item) {
   item.setAttribute("draggable", true);
   item.ondragstart = onDragStart;
@@ -33,7 +64,13 @@ function onDrop(event) {
 
   if (dropzone.classList.contains("dropable")) {
     dropzone.appendChild(draggableElement);
+  } else {
+    const parentNode = dropzone.parentNode;
 
-    event.dataTransfer.clearData();
+    if (parentNode.classList.contains("dropable")) {
+      parentNode.insertBefore(draggableElement, dropzone);
+    }
   }
+
+  event.dataTransfer.clearData();
 }
