@@ -41,11 +41,22 @@ function enableDragItem(item) {
   item.setAttribute("draggable", true);
   item.ondragstart = onDragStart;
   item.ondragend = onDragEnd;
+
+  item.ondragover = handleDragOver;
+  item.ondragleave = handleDragLeave;
 }
 
 function onDragStart() {
   event.dataTransfer.setData("text/plain", event.target.id);
   event.currentTarget.classList.add("onMove");
+}
+
+function handleDragOver() {
+  event.target.classList.add("onHover");
+}
+
+function handleDragLeave() {
+  event.target.classList.remove("onHover");
 }
 
 function onDragEnd(event) {
@@ -61,6 +72,8 @@ function onDrop(event) {
 
   const draggableElement = document.getElementById(id);
   const dropzone = event.target;
+
+  dropzone.classList.remove("onHover");
 
   if (dropzone.classList.contains("dropable")) {
     dropzone.appendChild(draggableElement);
