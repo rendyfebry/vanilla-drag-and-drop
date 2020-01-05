@@ -4,7 +4,6 @@ body {
 }
 
 .parent {
-  border: 2px solid #dfa612;
   min-height: 500px;
   display: flex;
   justify-content: space-between;
@@ -14,20 +13,12 @@ body {
   margin: 30px auto;
 }
 
-.todo_wrapper {
-  flex: 1;
-  padding: 15px 10px;
-}
-
-.progress_wrapper {
-  flex: 1;
-  background-color: #00aaff;
-  padding: 15px 10px;
-}
-
+.todo_wrapper,
+.progress_wrapper,
 .done_wrapper {
   flex: 1;
-  background-color: #6db65b;
+  background-color: #f4f5f7;
+  border: 5px solid #ffffff;
   padding: 15px 10px;
 }
 
@@ -39,11 +30,17 @@ body {
 }
 
 .draggable {
-  background-color: #4aae9b;
-  padding: 10px;
+  background-color: #ffffff;
+  padding: 15px;
   margin-bottom: 10px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.25);
 }
 
 .onMove {
-  background-color: yellow;
+  background-color: #deebff;
+}
+
+.onHover {
+  border-top: 1px solid #333333;
 }
